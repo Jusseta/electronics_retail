@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from chain.models import Product, Contacts, RetailChain
+from chain.validators import FactoryValidator
 
 
 class ContactSerializer(serializers.ModelSerializer):
@@ -19,3 +20,4 @@ class RetailChainSerializer(serializers.ModelSerializer):
         model = RetailChain
         fields = '__all__'
         read_only_fields = ('debt',)
+        validators = [FactoryValidator(type='type', provider='provider')]

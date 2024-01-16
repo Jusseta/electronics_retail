@@ -4,6 +4,7 @@ from chain.models import NULLABLE
 
 
 class User(AbstractUser):
+    """User model"""
     username = None
     email = models.EmailField(unique=True, verbose_name='email')
     first_name = models.CharField(max_length=50, verbose_name='имя')
