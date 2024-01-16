@@ -5,6 +5,7 @@ NULLABLE = {'null': True, 'blank': True}
 
 
 class Contacts(models.Model):
+    """Contacts model"""
     email = models.EmailField(unique=True, verbose_name='email')
     country = models.CharField(max_length=100, verbose_name='страна')
     city = models.CharField(max_length=100, verbose_name='город')
@@ -20,6 +21,7 @@ class Contacts(models.Model):
 
 
 class Product(models.Model):
+    """Products model"""
     name = models.CharField(max_length=100, verbose_name='название')
     model = models.CharField(max_length=100, verbose_name='модель')
     release_date = models.DateField(verbose_name='дата выхода продукта на рынок')
@@ -33,6 +35,7 @@ class Product(models.Model):
 
 
 class RetailChain(models.Model):
+    """Retail chain model"""
     COMPANY_TYPES = [
         ('FACTORY', 'Завод'),
         ('RETAIL_NET', 'Розничная сеть'),

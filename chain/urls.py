@@ -1,13 +1,14 @@
-from django.urls import path
 from rest_framework.routers import DefaultRouter
 from chain.apps import ChainConfig
-from chain.views import RetailChainViewSet
-
+from chain.views import RetailChainViewSet, ProductViewSet, ContactsViewSet
 
 app_name = ChainConfig.name
 
 
-router_user = DefaultRouter()
-router_user.register(r'chain', RetailChainViewSet, basename='chain')
+router = DefaultRouter()
+router.register(r'chain', RetailChainViewSet, basename='chain')
+router.register(r'product', ProductViewSet, basename='product')
+router.register(r'contacts', ContactsViewSet, basename='contacts')
 
-urlpatterns = [] + router_user.urls
+
+urlpatterns = [] + router.urls
